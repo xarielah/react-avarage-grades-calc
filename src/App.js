@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import AddItem from './components/inputgrade';
 import ShowGrades from './components/showgrades';
 import CalculateGrades from './components/calcgrades';
+import ResetAll from './components/resetall';
 
 function App() {
     const [gradesArray, setGradesArray] = useState([]);
@@ -23,7 +24,10 @@ function App() {
         <Box>
             <AddItem refresh={refresh} />
 
-            {gradesArray.length >= 2 && <CalculateGrades gradesArray={gradesArray} />}
+            <Box my={3}>
+                {gradesArray.length > 0 && <ResetAll refresh={refresh} />}
+                {gradesArray.length >= 2 && <CalculateGrades gradesArray={gradesArray} />}
+            </Box>
 
             <Box my={10} border={{ base: 'none', sm: '1px solid #ccc' }} borderRadius='lg' p={{ base: 0, md: 5 }}>
                 {gradesArray?.length > 0 && gradesArray ? (
