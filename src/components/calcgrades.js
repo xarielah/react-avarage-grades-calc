@@ -14,6 +14,7 @@ const CalculateGrades = ({ gradesArray }) => {
         }
         setAvg(Math.round(gradesTotal / pointsTotal));
     };
+    
     return (
         <Box mb={10} textAlign='center'>
             <Button colorScheme={'whatsapp'} onClick={calcAvg}>
