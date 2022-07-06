@@ -15,8 +15,9 @@ const GradeInput = ({ refresh }) => {
         if (previousData) {
             const existingData = JSON.parse(previousData);
             const formData = {
+                ...data,
                 id: existingData.length,
-                ...data
+                name: data.name.trim()
             };
             const parsedData = [...existingData, formData];
 
@@ -36,7 +37,7 @@ const GradeInput = ({ refresh }) => {
     const rules = { patten: /^[0-9]*$/, required: true };
 
     return (
-        <Box my={10}>
+        <Box mt={10}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <HStack px={{ base: 2, md: 0 }}>
                     <Controller
