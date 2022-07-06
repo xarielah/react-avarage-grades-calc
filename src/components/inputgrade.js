@@ -43,7 +43,7 @@ const GradeInput = ({ refresh }) => {
                         name='name'
                         control={control}
                         rules={{
-                            pattern: /^[0-9\u0590-\u05FFA-Za-z]*$/,
+                            pattern: /^[0-9\u0590-\u05FF- 'A-Za-z]*$/,
                             required: true,
                             minLength: 3
                         }}
